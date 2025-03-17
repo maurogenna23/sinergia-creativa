@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { User, BarChart, Target } from "lucide-react";
+import { BarChart, Target, User } from "lucide-react";
 import { ProfileTab } from "./profile-tab";
 import { SimulatorTab } from "./simulator-tab";
 import { ActionPlanTab } from "./action-plan-tab";
@@ -17,7 +17,6 @@ export function MetasMonthlyAssistant() {
   const [valorUSD, setValorUSD] = useState(1055);
   const [nivelActual, setNivelActual] = useState(10);
   const [producto, setProducto] = useState("Producto A");
-  const [gananciaNetaHoy, setGananciaNetaHoy] = useState();
   const [objetivo, setObjetivo] = useState(0);
   const [tengoQueVender, settengoQueVender] = useState(0);
   const [volumenCarrera, setVolumenCarrera] = useState(0);
@@ -25,10 +24,7 @@ export function MetasMonthlyAssistant() {
   const [nuevosDatos, setNuevosDatos] = useState(0);
   const [minPresentacionesMes, setMinPresentacionesMes] = useState(0);
   const [minPresentacionesSem, setMinPresentacionesSem] = useState(1);
-  const [simuladorValue, setSimuladorValue] = useState(70);
   const [tasaDeCierre, setTasaDeCierre] = useState(0.35);
-
-  console.log(nivelActual);
 
   const fecha = new Date().toLocaleDateString();
   const capacitacionMinima = "20Hs semanales";
@@ -44,8 +40,6 @@ export function MetasMonthlyAssistant() {
       setTasaDeCierre(0.5);
     }
   };
-
-  console.log(tasaDeCierre);
 
   return (
     <Card className="border shadow-lg overflow-hidden bg-white">
