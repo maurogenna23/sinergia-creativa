@@ -15,9 +15,10 @@ import {
   calculateTotalVentas,
   calculateVolumenEnCarrera,
   getProductNames,
+  ProductoKey,
+  ValoresProductos,
 } from "@/components/utils";
 import { useEffect } from "react";
-import { toast } from "sonner";
 
 interface SimulatorTabProps {
   producto: string;
@@ -87,7 +88,7 @@ export function SimulatorTab({
               <SelectContent>
                 {productNames.map((product) => (
                   <SelectItem key={product} value={product}>
-                    {product}
+                    {product} (${ValoresProductos[product as ProductoKey]})
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -100,7 +101,7 @@ export function SimulatorTab({
         <div className="flex justify-between items-center">
           <div className="text-gray-700">Tu Ganancia Neta Hoy:</div>
           <div className="text-2xl font-bold text-green-600">
-            ${calculateGananciaNeta(producto, nivelActual)}
+            ${calculateGananciaNeta(producto as ProductoKey, nivelActual)}
           </div>
         </div>
       </div>

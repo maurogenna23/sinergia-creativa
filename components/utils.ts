@@ -9,7 +9,7 @@ export const ValoresProductos = {
   "Producto H": 80000,
 };
 
-type ProductoKey = keyof typeof ValoresProductos;
+export type ProductoKey = keyof typeof ValoresProductos;
 
 export const getProductNames = () => Object.keys(ValoresProductos);
 
