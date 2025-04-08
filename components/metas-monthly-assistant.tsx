@@ -31,10 +31,9 @@ export function MetasMonthlyAssistant() {
 
   const handleNivelActual = (nivel: number) => {
     setNivelActual(nivel);
-    if ((nivel = 10)) {
+    if (nivel === 10) {
       setTasaDeCierre(0.3);
-    }
-    if ((nivel = 15)) {
+    } else if (nivel === 15) {
       setTasaDeCierre(0.35);
     } else {
       setTasaDeCierre(0.5);

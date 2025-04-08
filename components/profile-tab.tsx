@@ -125,7 +125,7 @@ export function ProfileTab({
           <div className="flex items-center">
             <TrendingUp className="w-5 h-5 text-blue-500 mr-2" />
           </div>
-          <Select>
+          <Select value={nivelActual.toString()} onValueChange={(value) => handleNivelActual(Number(value))}>
             <SelectTrigger>
               <SelectValue
                 className="font-bold text-blue-700"
@@ -137,7 +137,6 @@ export function ProfileTab({
                 <SelectItem
                   key={nivel}
                   value={nivel.toString()}
-                  onClick={() => handleNivelActual(nivel)}
                 >
                   {nivel}%
                 </SelectItem>
